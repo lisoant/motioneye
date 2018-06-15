@@ -752,6 +752,9 @@ def motion_camera_ui_to_dict(ui, old_config=None):
         '@upload_method': ui['upload_method'],
         '@upload_location': ui['upload_location'],
         '@upload_subfolders': ui['upload_subfolders'],
+        '@cloud_encryption_enabled': ui['cloud_encryption_enabled'],
+        '@cloud_encryption_upload_fails': ui['cloud_encryption_upload_fails'],
+        '@cloud_encryption_remove_unencrypted': ui['cloud_encryption_remove_unencrypted'],
         '@upload_username': ui['upload_username'],
         '@upload_password': ui['upload_password'],
 
@@ -1149,6 +1152,9 @@ def motion_camera_dict_to_ui(data):
         'upload_method': data['@upload_method'],
         'upload_location': data['@upload_location'],
         'upload_subfolders': data['@upload_subfolders'],
+        'cloud_encryption_enabled': data['@cloud_encryption_enabled'],
+        'cloud_encryption_upload_fails': data['@cloud_encryption_upload_fails'],
+        'cloud_encryption_remove_unencrypted': data['@cloud_encryption_remove_unencrypted'],
         'upload_username': data['@upload_username'],
         'upload_password': data['@upload_password'],
         'upload_authorization_key': '',  # needed, otherwise the field is hidden
@@ -1967,6 +1973,9 @@ def _set_default_motion_camera(camera_id, data):
     data.setdefault('@upload_method', 'POST')
     data.setdefault('@upload_location', '')
     data.setdefault('@upload_subfolders', True)
+    data.setdefault('@cloud_encryption_enabled', False)
+    data.setdefault('@cloud_encryption_upload_fails', False)
+    data.setdefault('@cloud_encryption_remove_unencrypted', False)
     data.setdefault('@upload_username', '')
     data.setdefault('@upload_password', '')
 

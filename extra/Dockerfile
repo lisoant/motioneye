@@ -33,6 +33,7 @@ RUN apt-get --quiet update && \
     curl -L --output /tmp/motion.deb https://github.com/Motion-Project/motion/releases/download/release-4.1/artful_motion_4.1-1_amd64.deb && \
     dpkg -i /tmp/motion.deb && \
     rm /tmp/motion.deb && \
+    pip install pynacl && \
     pip install /tmp/motioneye && \
     rm -rf /tmp/motioneye && \
     apt-get purge --yes \

@@ -463,6 +463,21 @@
                         <td class="settings-item-value"><input type="checkbox" class="styled storage camera-config" id="uploadSubfoldersSwitch"></td>
                         <td><span class="help-mark" title="enable this to upload the media files together with their subfolders, instead of placing them directly into the root location">?</span></td>
                     </tr>
+                    <tr class="settings-item advanced-setting" depends="uploadEnabled">
+                        <td class="settings-item-label"><span class="settings-item-label">Encrypt files before cloud upload</span></td>
+                        <td class="settings-item-value"><input type="checkbox" class="styled device camera-config" id="cloudEncryptionSwitch"></td>
+                        <td><span class="help-mark" title="Enables encryption for media files before they're uploaded to the cloud. Don't forget to generate keys with generateKeys.py and place them in motioneye config directory.">?</span></td>
+                    </tr>
+                    <tr class="settings-item advanced-setting" depends="uploadEnabled">
+                        <td class="settings-item-label"><span class="settings-item-label">Upload unencrypted files, if encryption fails</span></td>
+                        <td class="settings-item-value"><input type="checkbox" class="styled device camera-config" id="cloudEncryptionUploadFailsSwitch"></td>
+                        <td><span class="help-mark" title="Enable upload of unencrypted media files to the cloud, if encryption fails?">?</span></td>
+                    </tr>
+                    <tr class="settings-item advanced-setting" depends="uploadEnabled">
+                        <td class="settings-item-label"><span class="settings-item-label">Remove unencrypted files after encryption</span></td>
+                        <td class="settings-item-value"><input type="checkbox" class="styled device camera-config" id="cloudEncryptionRemoveUnencryptedSwitch"></td>
+                        <td><span class="help-mark" title="Remove unencrypted media files from local storage after they've been encrypted?">?</span></td>
+                    </tr>
                     <tr class="settings-item advanced-setting" depends="uploadEnabled uploadService=(ftp|sftp|http|https)">
                         <td class="settings-item-label"><span class="settings-item-label">Username</span></td>
                         <td class="settings-item-value"><input type="text" class="styled storage camera-config" id="uploadUsernameEntry"></td>
